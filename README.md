@@ -2,7 +2,7 @@
 - [x] Next.js
 - [x] TypeScript
 - [x] ESLint
-- [ ] Prettier
-- [ ] husky
+- [x] Prettier
+- [x] husky
 - [ ] Storybook
 - [ ] Chromatic
