@@ -1,14 +1,13 @@
-import React from 'react';
-
-import { Header } from '../Header';
+import { useState } from 'react';
+import { Header } from '../../components/commons/Header';
 import './index.css';
 
 type User = {
   name: string;
 };
 
-export const Page: React.VFC = () => {
-  const [user, setUser] = React.useState<User>();
+export const HomeScreen: React.FC = () => {
+  const [user, setUser] = useState<User>();
 
   return (
     <article>
