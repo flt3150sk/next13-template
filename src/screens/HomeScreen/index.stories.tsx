@@ -1,13 +1,18 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
 import { HomeScreen } from '.';
 
-export default {
+const meta = {
   component: HomeScreen,
-} as ComponentMeta<typeof HomeScreen>;
+} satisfies Meta<typeof HomeScreen>;
 
-export const LoggedIn: ComponentStoryObj<typeof HomeScreen> = {};
-export const LoggedOut: ComponentStoryObj<typeof HomeScreen> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const LoggedIn: Story = {};
+
+export const LoggedOut: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const loginButton = await canvas.getByRole('button', { name: /Log in/i });

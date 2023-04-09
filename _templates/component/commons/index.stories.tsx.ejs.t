@@ -1,14 +1,18 @@
 ---
 to: src/components/commons/<%= name %>/index.stories.tsx
 ---
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 import { <%= name %> } from '.';
 
-export default {
+const meta = {
   component: <%= name %>,
-}  as ComponentMeta<typeof <%= name %>>;
+} satisfies Meta<typeof <%= name %>>;
 
-export const Default: ComponentStoryObj<typeof <%= name %>> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Default: Story = {
   args: {
     onClick: () => alert('sample'),
     <%- hasChildren ? `children: 'Button'` : null %>
