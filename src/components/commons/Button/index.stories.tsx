@@ -1,31 +1,35 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 
 import { Button } from '.';
 
-export default {
+const meta = {
   component: Button,
-} as ComponentMeta<typeof Button>;
+} satisfies Meta<typeof Button>;
 
-export const Index: ComponentStoryObj<typeof Button> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Index: Story = {
   args: {
     primary: true,
     label: 'Button',
   },
 };
 
-export const Secondary: ComponentStoryObj<typeof Button> = {
+export const Secondary: Story = {
   args: {
     label: 'Button',
   },
 };
 
-export const Large: ComponentStoryObj<typeof Button> = {
+export const Large: Story = {
   args: {
     label: 'Button',
   },
 };
 
-export const Small: ComponentStoryObj<typeof Button> = {
+export const Small: Story = {
   args: {
     size: 'large',
     label: 'Button',

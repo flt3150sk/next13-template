@@ -1,12 +1,16 @@
-import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
+import type { StoryObj, Meta } from '@storybook/react';
 
 import { Header } from '.';
 
-export default {
+const meta = {
   component: Header,
-} as ComponentMeta<typeof Header>;
+} satisfies Meta<typeof Header>;
 
-export const LoggedIn: ComponentStoryObj<typeof Header> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const LoggedIn: Story = {
   args: {
     user: {
       name: 'Jane Doe',
@@ -14,6 +18,6 @@ export const LoggedIn: ComponentStoryObj<typeof Header> = {
   },
 };
 
-export const LoggedOut: ComponentStoryObj<typeof Header> = {
+export const LoggedOut: Story = {
   args: {},
 };
